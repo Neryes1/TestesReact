@@ -1,48 +1,31 @@
-import React, { Component } from 'react';
-import './App.css';
-import Persons from './Persons/Persons';
+import React from "react";
+import Expenses from './components/Expenses';
 
-class App extends Component {
-
-  state = {
-    nome: '',
-    skill: ''    
-  }
-
-  nomeHandler = (event) => {
-    this.setState({
-      nome: event.target.value
-    })
-  }
-
-  skillHandler = (event) => {
-    this.setState({
-      skill: event.target.value
-    })
-  }
-
-  limparHandler = () => {
-    this.setState({
-      nome: '',
-      skill: ''
-    })
-  }
-
-  render(){
-    return (
-      <div className={'App'}>   
-        <Persons nome={this.state.nome} 
-                 skill={this.state.skill} 
-                 nomeH={this.nomeHandler} 
-                 skillH={this.skillHandler} 
-                 limpar={this.limparHandler}
-        />  
-
-        <p>Nome: {this.state.nome}</p>
-        <p>Skill: {this.state.skill}</p>
-      </div>
-    );
-  }
+function App(){
+  const expenses = [
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2021, 7, 14)
+    },
+    {
+      id: 'e2',
+      title: 'New TV',
+      amount: 799.12,
+      date: new Date(2021, 2, 12)
+    },
+    {
+      id: 'e3',
+      title: 'Car Insurence',
+      amount: 245.99,
+      date: new Date(2021, 5, 12)
+    },
+    
+  ]
+  return(
+    <Expenses items={expenses} />
+  );
 }
 
 export default App;
