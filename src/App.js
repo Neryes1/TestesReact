@@ -21,6 +21,12 @@ function App(){
       amount: 245.99,
       date: new Date(2021, 5, 12)
     },
+    {
+      id: 'e4',
+      title: 'New Computer',
+      amount: 800.00,
+      date: new Date(2026, 7, 22)
+    },
     
   ]
   return(
